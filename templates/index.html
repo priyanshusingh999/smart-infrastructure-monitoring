@@ -3,6 +3,603 @@
 {% block title %}Home - Project AI{% endblock %}
 
 {% block content %}
-    <h2>Home of Project AI</h2>
-    <p>Welcome to the Project AI Smart Project Monitoring!</p>
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                SIH26122 • Smart Infrastructure Management
+            </div>
+
+
+            <h1>
+                Turn Project Documents
+                <span>Into Actionable Insights.</span>
+            </h1>
+
+
+            <p class="hero-description">
+
+                ProjectAI uses intelligent data extraction to read
+                project reports, spreadsheets and documents, identify
+                actual work progress and automatically link it with
+                project schedules.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                     <a href="{{ url_for('auth.login') }}"
+                   class="primary-btn">
+                    Start Monitoring
+                    <span>→</span>
+                </a>
+
+                <a href="#workflow"
+                   class="secondary-btn">
+                    Explore How It Works
+                </a>
+
+            </div>
+
+
+            <div class="hero-trust">
+
+                <span>✓ AI-Powered</span>
+
+                <span>✓ Automated</span>
+
+                <span>✓ Schedule Linked</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Dashboard Preview -->
+
+        <div class="hero-preview">
+
+            <div class="preview-window">
+
+                <div class="preview-topbar">
+
+                    <div class="window-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+
+                    <div class="preview-title">
+                        Project Dashboard
+                    </div>
+
+                </div>
+
+
+                <div class="preview-body">
+
+                    <div class="mini-sidebar">
+
+                        <strong>ProjectAI</strong>
+
+                        <div class="mini-nav active">
+                            🏠 Dashboard
+                        </div>
+
+                        <div class="mini-nav">
+                            📄 Documents
+                        </div>
+
+                        <div class="mini-nav">
+                            📅 Schedule
+                        </div>
+
+                        <div class="mini-nav">
+                            📊 Progress
+                        </div>
+
+                        <div class="mini-nav">
+                            ⚠️ Risks
+                        </div>
+
+                    </div>
+
+
+                    <div class="mini-content">
+
+                        <h3>Project Overview</h3>
+
+                        <p>
+                            Monitor project execution
+                        </p>
+
+
+                        <div class="mini-cards">
+
+                            <div>
+                                <small>Progress</small>
+                                <strong>68%</strong>
+                            </div>
+
+                            <div>
+                                <small>Activities</small>
+                                <strong>128</strong>
+                            </div>
+
+                            <div>
+                                <small>Delayed</small>
+                                <strong>12</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="mini-analysis">
+
+                            <div class="progress-section">
+
+                                <strong>Project Status</strong>
+
+                                <div class="progress-bar">
+                                    <span></span>
+                                </div>
+
+                                <small>
+                                    68% project completed
+                                </small>
+
+                            </div>
+
+
+                            <div class="ai-box">
+
+                                <strong>🤖 AI Analysis</strong>
+
+                                <small>
+                                    Document analysis ready
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= STATS ================= -->
+
+    <section class="stats">
+
+        <div class="stat-item">
+
+            <strong>AI</strong>
+
+            <span>Document Intelligence</span>
+
+        </div>
+
+
+        <div class="stat-item">
+
+            <strong>100%</strong>
+
+            <span>Automated Data Capture</span>
+
+        </div>
+
+
+        <div class="stat-item">
+
+            <strong>Real-Time</strong>
+
+            <span>Progress Monitoring</span>
+
+        </div>
+
+
+        <div class="stat-item">
+
+            <strong>Smart</strong>
+
+            <span>Schedule Linking</span>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FEATURES ================= -->
+
+    <section class="section"
+             id="features">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                CORE CAPABILITIES
+            </span>
+
+            <h2>
+                Everything You Need to
+                <span>Monitor Projects Smarter.</span>
+            </h2>
+
+            <p>
+                ProjectAI transforms unstructured project information
+                into structured, actionable project intelligence.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📄
+                </div>
+
+                <h3>
+                    Intelligent Document Capture
+                </h3>
+
+                <p>
+                    Automatically process project reports,
+                    PDFs, spreadsheets and other documents
+                    to extract meaningful project data.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    AI-Powered Extraction
+                </h3>
+
+                <p>
+                    Extract activities, quantities, dates,
+                    completion percentages and other
+                    important project information.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📅
+                </div>
+
+                <h3>
+                    Schedule Linking
+                </h3>
+
+                <p>
+                    Automatically connect extracted work
+                    information with planned project
+                    activities and schedules.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Progress Monitoring
+                </h3>
+
+                <p>
+                    Compare planned and actual progress
+                    through a centralized project dashboard.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    ⚠️
+                </div>
+
+                <h3>
+                    Risk & Delay Detection
+                </h3>
+
+                <p>
+                    Identify delayed activities and
+                    potential project risks before they
+                    become critical.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    AI Project Assistant
+                </h3>
+
+                <p>
+                    Ask questions about project progress,
+                    documents, schedules and risks using
+                    an intelligent project assistant.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= WORKFLOW ================= -->
+
+    <section class="workflow-section"
+             id="workflow">
+
+        <div class="section-heading">
+
+            <span class="section-label">
+                HOW IT WORKS
+            </span>
+
+            <h2>
+                From Raw Documents
+                <span>To Project Intelligence.</span>
+            </h2>
+
+        </div>
+
+
+        <div class="workflow">
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <div class="step-icon">
+                    📤
+                </div>
+
+                <h3>
+                    Upload
+                </h3>
+
+                <p>
+                    Upload project reports,
+                    spreadsheets and documents.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-line"></div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <div class="step-icon">
+                    🧠
+                </div>
+
+                <h3>
+                    Extract
+                </h3>
+
+                <p>
+                    AI identifies activities,
+                    progress and key information.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-line"></div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <div class="step-icon">
+                    🔗
+                </div>
+
+                <h3>
+                    Link
+                </h3>
+
+                <p>
+                    Match actual work with
+                    planned schedule activities.
+                </p>
+
+            </div>
+
+
+            <div class="workflow-line"></div>
+
+
+            <div class="workflow-step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <div class="step-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Monitor
+                </h3>
+
+                <p>
+                    View progress, delays and
+                    insights on one dashboard.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= TECHNOLOGY ================= -->
+
+    <section class="technology"
+             id="technology">
+
+        <div class="tech-content">
+
+            <span class="section-label">
+                TECHNOLOGY
+            </span>
+
+            <h2>
+                Built for Modern
+                <span>Infrastructure Projects.</span>
+            </h2>
+
+            <p>
+                A modular architecture designed to process
+                project data efficiently and provide
+                intelligent insights to project managers.
+            </p>
+
+        </div>
+
+
+        <div class="tech-stack">
+
+            <div class="tech-card">
+                <strong>Python</strong>
+                <span>AI & Data Processing</span>
+            </div>
+
+            <div class="tech-card">
+                <strong>Flask</strong>
+                <span>Backend API</span>
+            </div>
+
+            <div class="tech-card">
+                <strong>MongoDB</strong>
+                <span>Project Data</span>
+            </div>
+
+            <div class="tech-card">
+                <strong>AI / NLP</strong>
+                <span>Document Intelligence</span>
+            </div>
+
+            <div class="tech-card">
+                <strong>Docker</strong>
+                <span>Deployment</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta"
+             id="about">
+
+        <div>
+
+            <span class="section-label">
+                PROJECTAI
+            </span>
+
+            <h2>
+                Make Project Monitoring
+                <span>Intelligent.</span>
+            </h2>
+
+            <p>
+                Reduce manual reporting, connect actual progress
+                with schedules and make better project decisions.
+            </p>
+
+        </div>
+
+
+        <a href="{{ url_for('auth.login') }}"
+           class="primary-btn">
+            Get Started
+            <span>→</span>
+        </a>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            <div class="logo-box">
+                P
+            </div>
+
+            <div>
+                <strong>ProjectAI</strong>
+                <small>
+                    Intelligent Infrastructure Management
+                </small>
+            </div>
+        </div>
+
+
+        <p>
+            SIH26122 • Intelligent Data Capture &
+            Schedule-Linking Layer
+        </p>
+
+
+        <span>
+            © 2026 ProjectAI. Smart Infrastructure Monitoring.
+        </span>
+
+    </footer>
 {% endblock %}

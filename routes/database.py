@@ -2,25 +2,33 @@ from pymongo import MongoClient
 from bson import ObjectId
 from config import Config
 
-client = MongoClient(Config.MONGO_URI)
+client = MongoClient(
+    Config.MONGO_URI,
+    serverSelectionTimeoutMS=5000,
+    connectTimeoutMS=5000,
+)
 db = client[Config.MONGO_DBNAME]
 users_collection = db["users"]
 password_reset_collection = db["password_reset_tokens"]
 
 
-users_collection.create_index(
-    "email",
-    unique=True
-)
+_indexes_ready = False
 
 
-users_collection.create_index(
-    "username",
-    unique=True
-)
+def ensure_indexes():
+    global _indexes_ready
+
+    if _indexes_ready:
+        return
+
+    users_collection.create_index('email', unique=True)
+    users_collection.create_index('username', unique=True)
+    password_reset_collection.create_index('expires_at', expireAfterSeconds=0)
+    _indexes_ready = True
 
 
 def create_user(name, username, email, password):
+    ensure_indexes()
     user = {"name": name, "username": username, "email": email, "password": password}
     result = users_collection.insert_one(user)
     return result.inserted_id
