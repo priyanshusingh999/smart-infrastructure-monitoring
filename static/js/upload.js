@@ -26,6 +26,10 @@ const scanButton =
 const dropArea =
     document.getElementById("dropArea");
 
+if (!fileInput || !chooseFile || !scanButton || !dropArea) {
+    // Upload controls are only present on the documents page.
+} else {
+
 
 // ==========================================
 // CHOOSE FILE BUTTON
@@ -178,3 +182,5 @@ scanButton.addEventListener("click", function () {
     }, 2000);
 
 });
+
+}

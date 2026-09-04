@@ -24,35 +24,35 @@ document.addEventListener(
 
 
         // Dashboard load
-        loadDashboard();
+        if (typeof loadDashboard === "function") loadDashboard();
 
 
         // Schedule load
-        loadSchedule();
+        if (typeof loadSchedule === "function") loadSchedule();
 
 
         // Risks load
-        loadRisks();
+        if (typeof loadRisks === "function") loadRisks();
 
 
         // Progress load
-        loadProgress();
+        if (typeof loadProgress === "function") loadProgress();
 
 
         // Assistant load
-        loadAssistant();
+        if (typeof loadAssistant === "function") loadAssistant();
 
 
         // Documents load
-        loadDocuments();
+        if (typeof loadDocuments === "function") loadDocuments();
 
 
         // Navigation load
-        loadNavigation();
+        if (typeof loadNavigation === "function") loadNavigation();
 
 
         // Upload load
-        loadUpload();
+        if (typeof loadUpload === "function") loadUpload();
 
         
 

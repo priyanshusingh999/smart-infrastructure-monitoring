@@ -24,8 +24,13 @@ const dashboardData = {
 
 function loadDashboard() {
 
+    const progressValue = document.getElementById("progressValue");
+    if (!progressValue) {
+        return;
+    }
+
     // Overall progress
-    document.getElementById("progressValue").textContent =
+    progressValue.textContent =
         dashboardData.overallProgress + "%";
 
 
@@ -54,4 +59,10 @@ function loadDashboard() {
         dashboardData.overallProgress +
         "% of the project has been completed.";
 
+}
+
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", loadDashboard);
+} else {
+    loadDashboard();
 }

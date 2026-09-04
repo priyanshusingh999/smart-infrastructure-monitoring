@@ -42,7 +42,7 @@ const scheduleData = [
 function loadSchedule() {
 
     const tableBody =
-        document.getElementById("scheduleBody");
+        document.getElementById("scheduleTable");
 
 
     if (!tableBody) {

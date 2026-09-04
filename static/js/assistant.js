@@ -17,6 +17,10 @@ const sendButton =
 const chatMessages =
     document.getElementById("chatMessages");
 
+if (!chatInput || !sendButton || !chatMessages) {
+    // The assistant controls are only present on the assistant page.
+} else {
+
 
 // ==========================================
 // SEND BUTTON
@@ -118,5 +122,7 @@ function sendMessage() {
             chatMessages.scrollHeight;
 
     }, 700);
+
+}
 
 }
