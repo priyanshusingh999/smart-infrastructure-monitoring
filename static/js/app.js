@@ -34,5 +34,27 @@ document.addEventListener(
         // Risks load
         loadRisks();
 
+
+        // Progress load
+        loadProgress();
+
+
+        // Assistant load
+        loadAssistant();
+
+
+        // Documents load
+        loadDocuments();
+
+
+        // Navigation load
+        loadNavigation();
+
+
+        // Upload load
+        loadUpload();
+
+        
+
     }
 );

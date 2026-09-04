@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProjectAI - Smart Project Monitoring</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
 </head>
 <body>
@@ -12,43 +12,74 @@
 
         <div class="logo">
 
-            <h2>ProjectAI</h2>
+            <h2>Project AI</h2>
 
             <p>Smart Project Monitoring</p>
 
         </div>
 
         <nav>
-            <a href="{{ url_for('dashboard') }}" class="nav-btn{% if request.endpoint == 'dashboard' %} active{% endif %}">
+        
+            <button type="button"
+                    class="nav-btn {% if request.endpoint == 'dashboard' %}active{% endif %}"
+                    onclick="window.location.href='{{ url_for('dashboard') }}'">
                 🏠 Dashboard
-            </a>
+            </button>
 
-            <a href="{{ url_for('documents') }}" class="nav-btn{% if request.endpoint == 'documents' %} active{% endif %}">
+            <button type="button"
+                    class="nav-btn {% if request.endpoint == 'documents' %}active{% endif %}"
+                    onclick="window.location.href='{{ url_for('documents') }}'">
                 📄 Documents
-            </a>
+            </button>
 
-            <a href="{{ url_for('schedule') }}" class="nav-btn{% if request.endpoint == 'schedule' %} active{% endif %}">
+            <button type="button"
+                    class="nav-btn {% if request.endpoint == 'schedule' %}active{% endif %}"
+                    onclick="window.location.href='{{ url_for('schedule') }}'">
                 📅 Schedule
-            </a>
+            </button>
 
-            <a href="{{ url_for('progress') }}" class="nav-btn{% if request.endpoint == 'progress' %} active{% endif %}">
+            <button type="button"
+                    class="nav-btn {% if request.endpoint == 'progress' %}active{% endif %}"
+                    onclick="window.location.href='{{ url_for('progress') }}'">
                 📊 Progress
-            </a>
+            </button>
 
-            <a href="{{ url_for('risks') }}" class="nav-btn{% if request.endpoint == 'risks' %} active{% endif %}">
+            <button type="button"
+                    class="nav-btn {% if request.endpoint == 'risks' %}active{% endif %}"
+                    onclick="window.location.href='{{ url_for('risks') }}'">
                 ⚠️ Risks & Delays
-            </a>
+            </button>
 
-            <a href="{{ url_for('assistant') }}" class="nav-btn{% if request.endpoint == 'assistant' %} active{% endif %}">
+            <button type="button"
+                    class="nav-btn {% if request.endpoint == 'assistant' %}active{% endif %}"
+                    onclick="window.location.href='{{ url_for('assistant') }}'">
                 🤖 AI Assistant
-            </a>
+            </button>
+
         </nav>
 
     </aside>
 
     <main class="main">
-        <header>
-            <h1>ProjectAI - Smart Project Monitoring</h1>
+        <header class="topbar">
+
+            <div>
+
+                <h2 id="pageTitle">Project Dashboard</h2>
+
+                <p id="pageSubtitle">
+                    Monitor your infrastructure project
+                </p>
+
+            </div>
+
+
+            <div class="profile">
+
+                👤 <span>Project Manager</span>
+
+            </div>
+
         </header>
         {% block content %}{% endblock %}
     </main>

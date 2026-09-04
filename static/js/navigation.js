@@ -1,56 +1,36 @@
-// ==========================================
-// NAVIGATION
-// ==========================================
+// // ==========================================
+// // NAVIGATION
+// // ==========================================
 
-// Website ke saare navigation buttons ko select karo
-const navButtons = document.querySelectorAll(".nav-btn");
+function initializeNavigation() {
+    const navButtons = document.querySelectorAll(".nav-btn");
 
-// Website ke saare pages ko select karo
-const pages = document.querySelectorAll(".page");
+    navButtons.forEach(function (button) {
 
+        button.addEventListener("click", function () {
 
-// Har navigation button par click event lagao
-navButtons.forEach(function (button) {
+            // Active class remove from all buttons
+            navButtons.forEach(function (btn) {
+                btn.classList.remove("active");
+            });
 
-    button.addEventListener("click", function () {
+            // Current button active
+            this.classList.add("active");
 
-        // Button ke data-page attribute ki value lo
-        const pageName = button.getAttribute("data-page");
+            // Flask URL stored in data-url
+            const url = this.dataset.url;
 
-
-        // Saare pages ko hide karo
-        pages.forEach(function (page) {
-
-            page.classList.remove("active");
-
-        });
-
-
-        // Required page ko find karo
-        const selectedPage =
-            document.getElementById(pageName);
-
-
-        // Agar page mil gaya
-        if (selectedPage) {
-
-            // Us page ko show karo
-            selectedPage.classList.add("active");
-
-        }
-
-
-        // Saare navigation buttons se active class hatao
-        navButtons.forEach(function (item) {
-
-            item.classList.remove("active");
+            if (url) {
+                window.location.href = url;
+            }
 
         });
-
-
-        // Current button ko active karo
-        button.classList.add("active");
 
     });
+}
 
-});
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeNavigation);
+} else {
+    initializeNavigation();
+}
