@@ -1,9 +1,9 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session
 from werkzeug.security import (generate_password_hash, check_password_hash)
 from pymongo.errors import DuplicateKeyError, PyMongoError
-from routes.database import (create_user, get_user_by_email, get_user_by_username, password_reset_collection, users_collection, ensure_indexes,)
+from utils.database import (create_user, get_user_by_email, get_user_by_username, password_reset_collection, users_collection, ensure_indexes,)
 from datetime import datetime, timedelta
-from routes.email import send_otp_email
+from utils.email import send_otp_email
 from functools import wraps
 import secrets, smtplib, logging
 
