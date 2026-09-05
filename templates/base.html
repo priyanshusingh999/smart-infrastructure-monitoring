@@ -76,7 +76,7 @@
 
             <div class="profile">
 
-                👤 <span>Project Manager</span>
+                👤 <span>{% if session.username %}{{ session.username }}{% else %}Guest {% endif %}</span>
 
             </div>
 

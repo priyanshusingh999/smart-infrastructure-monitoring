@@ -1,17 +1,34 @@
-import logging
-
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session
 from werkzeug.security import (generate_password_hash, check_password_hash)
 from pymongo.errors import DuplicateKeyError, PyMongoError
 from routes.database import (create_user, get_user_by_email, get_user_by_username, password_reset_collection, users_collection, ensure_indexes,)
 from datetime import datetime, timedelta
 from routes.email import send_otp_email
-import secrets
-import smtplib
+from functools import wraps
+import secrets, smtplib, logging
+
 
 MIN_PASSWORD_LENGTH = 8
 logger = logging.getLogger(__name__)
 auth = Blueprint('auth', __name__)
+
+
+def login_required(f):
+
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+
+        # User login hai ya nahi check karo
+        if 'username' not in session:
+
+            flash('Please login first to access this page.', 'warning')
+
+            return redirect(url_for('auth.login'))
+
+        return f(*args, **kwargs)
+
+    return decorated_function
+
 
 
 @auth.route('/login', methods=['GET', 'POST'])
@@ -196,29 +213,6 @@ def forgot_password():
         )
 
     return render_template('auth/forgot-password.html')
-
-
-# @auth.route('/forgot-password', methods=['GET', 'POST'])
-# def forgot_password():
-
-#     if request.method == 'POST':
-
-#         email = request.form['email']
-
-#         # TODO:
-#         # MongoDB mein email check karna
-#         # Password reset token generate karna
-#         # Reset link email karna
-
-#         flash(
-#             'If an account exists with this email, '
-#             'a password reset link will be sent.',
-#             'success'
-#         )
-
-#         return redirect(url_for('auth.forgot_password'))
-
-#     return render_template('auth/forgot-password.html')
 
 
 @auth.route('/verify-otp', methods=['GET', 'POST'])
